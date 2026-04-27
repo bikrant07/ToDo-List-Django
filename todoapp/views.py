@@ -8,7 +8,7 @@ def home(request):
     tasks = Task.objects.filter(completed=False).order_by("-created_at")
     completed_tasks = Task.objects.filter(completed=True).order_by("-created_at")
     form = TaskForm()
-    return render(request, "home.html", {"tasks": tasks, "completed_tasks": completed_tasks, "form": form})
+    return render(request, "index.html", {"tasks": tasks, "completed_tasks": completed_tasks, "form": form})
 
 
 def addTask(request):
